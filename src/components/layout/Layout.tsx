@@ -6,11 +6,9 @@ interface ILayoutProps {
 
 export const Layout = (props: ILayoutProps) => {
   return (
-    <div>
-      <div>
-        <Header />
-      </div>
-      <div>{props.children}</div>
-    </div>
+    <main className="flex flex-col h-screen min-h-screen">
+      <Header />
+      <div className="bg-zinc-100 flex justify-center flex-1">{props.children}</div>
+    </main>
   );
 };

@@ -1,17 +1,14 @@
-import "./App.css";
 import { ApolloProvider } from "@apollo/client";
-import { Client } from "./libs/apollo";
-import { IndexPage } from "./pages/Index";
-import { Layout } from "./components/layout/Layout";
+import { Client } from "./lib/apollo";
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "./Router";
 
 function App() {
   return (
     <ApolloProvider client={Client}>
-      <Layout>
-        <main className="w-full h-screen bg-gray-100 flex">
-          <IndexPage />
-        </main>
-      </Layout>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </ApolloProvider>
   );
 }
