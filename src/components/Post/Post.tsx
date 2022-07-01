@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import { Heart } from "phosphor-react";
 import pt_BR from "date-fns/locale/pt-BR";
 import { Link } from "react-router-dom";
+import { PostLike } from "../PostLike/PostLike";
 
 interface IPostProps {
   title: string;
@@ -20,10 +21,10 @@ export const Post = (props: IPostProps) => {
       <div className="flex w-full flex-row justify-between mb-6">
         <span className="text-base text-zinc-500 font-lexend">{formatedDate}</span>
         <span>
-          <Heart size={24} />
+          <PostLike />
         </span>
       </div>
-      <Link to={props.slug}>
+      <Link to={`/post/${props.slug}`}>
         <div className="mb-2">
           <h1 className="font-lexend text-2xl">{props.title}</h1>
         </div>

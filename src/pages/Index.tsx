@@ -39,7 +39,7 @@ export const IndexPage = () => {
   }
 
   return (
-    <div className="w-2/3 pt-24">
+    <div className="w-full px-5 md:w-2/3 md:px-0 pt-24">
       {data.codelandia01S.map((post) => {
         return (
           <Post key={post.id} date={post.published} slug={post.slug} title={post.title}>
