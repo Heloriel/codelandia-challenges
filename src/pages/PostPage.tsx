@@ -1,3 +1,4 @@
+import { Footer } from "../components/layout/Footer/Footer";
 import { SmallHeader } from "../components/layout/Header/SmallHeader";
 
 interface IPostPageProps {
@@ -9,11 +10,9 @@ interface IPostPageProps {
 export const PostPage = (props: IPostPageProps) => {
   return (
     <div className="flex flex-col w-full h-screen">
-      <div>
-        <SmallHeader />
-      </div>
-      <div className="flex flex-col flex-1 items-center">
-        <section className="bg-white mt-8 w-2/3 px-16 py-4 rounded">
+      <SmallHeader />
+      <div className="flex flex-col flex-1 items-center px-8 md:p-0">
+        <section className="bg-white mt-8 w-full md:w-2/3 px-8 py-4 rounded">
           <h1 className="font-bold text-4xl text-center font-lexend">
             Agora é oficial: o Windows 11 está vindo
           </h1>
@@ -25,6 +24,7 @@ export const PostPage = (props: IPostPageProps) => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

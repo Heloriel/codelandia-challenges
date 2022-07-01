@@ -11,7 +11,7 @@ export const SearchBar = () => {
           type="text"
           name="search"
           id="mainSearch"
-          className="w-full h-full text-white opacity-100 bg-transparent flex-1 focus:outline-none"
+          className="w-full h-full text-white opacity-100 bg-transparent flex-1 focus:outline-none pr-5"
         />
       </div>
     </div>
