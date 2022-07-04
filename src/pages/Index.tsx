@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
+import { Loading } from "../components/Loading/Loading";
 import { Post } from "../components/Post/Post";
 
 interface Post {
@@ -26,7 +27,11 @@ export const IndexPage = () => {
     }
   `;
 
-  const { data } = useQuery<{ codelandia01S: Post[] }>(GET_POSTS_QUERY);
+  const { loading, data } = useQuery<{ codelandia01S: Post[] }>(GET_POSTS_QUERY);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   if (!data) {
     return (
