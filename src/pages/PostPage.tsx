@@ -2,8 +2,8 @@ import { gql, useQuery } from "@apollo/client";
 import { format } from "date-fns";
 import pt_BR from "date-fns/locale/pt-BR";
 import { Navigate, useParams } from "react-router-dom";
-import { Footer } from "../components/layout/Footer/Footer";
-import { SmallHeader } from "../components/layout/Header/SmallHeader";
+import { Footer } from "../components/Layout/Footer/Footer";
+import { SmallHeader } from "../components/Layout/Header/SmallHeader";
 import { Loading } from "../components/Loading/Loading";
 
 interface IGetPost {

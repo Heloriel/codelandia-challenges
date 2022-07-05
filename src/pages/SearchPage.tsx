@@ -22,7 +22,7 @@ export const SearchPage = () => {
 
   const SEARCH_POSTS_QUERY = gql`
     query PostSearch($search: String) {
-      codelandia01S(first: 10, where: { _search: $search }, orderBy: publishedAt_DESC) {
+      codelandia01S(where: { _search: $search }, orderBy: publishedAt_DESC) {
         id
         slug
         title
