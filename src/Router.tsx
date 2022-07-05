@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { IndexPage } from "./pages/Index";
 import { PostPage } from "./pages/PostPage";
 import { NotFound } from "./pages/NotFound";
+import { SearchPage } from "./pages/SearchPage";
 
 export function Router() {
   return (
@@ -12,6 +13,14 @@ export function Router() {
         element={
           <Layout>
             <IndexPage />
+          </Layout>
+        }
+      />
+      <Route
+        path="/search/*"
+        element={
+          <Layout>
+            <SearchPage />
           </Layout>
         }
       />

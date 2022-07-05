@@ -5,7 +5,6 @@ import { Navigate, useParams } from "react-router-dom";
 import { Footer } from "../components/layout/Footer/Footer";
 import { SmallHeader } from "../components/layout/Header/SmallHeader";
 import { Loading } from "../components/Loading/Loading";
-import { NoPostFound } from "../components/NoPostFound/NoPostFOund";
 
 interface IGetPost {
   title: string;

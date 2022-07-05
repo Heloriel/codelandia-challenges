@@ -33,7 +33,7 @@ export const IndexPage = () => {
     return <Loading />;
   }
 
-  if (!data) {
+  if (!data || !data.codelandia01S) {
     return (
       <div className="flex flex-1 items-center justify-center">
         <span className="text-gray-500 text-3xl italic">
