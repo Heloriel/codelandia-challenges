@@ -1,18 +1,18 @@
 .pagination-container {
-  @apply flex border bg-white items-center justify-center;
+  @apply flex items-center justify-center;
 }
 
 .page {
-  @apply border-t border-b border-zinc-400 font-bold font-lexend p-2;
+  @apply border-t border-b border-r border-zinc-200 text-zinc-600 font-lexend py-2 px-4;
 }
 .active {
   @apply border border-indigo-600 bg-gradient-to-r from-indigo-500 to-blue-500 text-white;
 }
 
 .previous {
-  @apply p-2 border border-zinc-400;
+  @apply font-lexend p-2 border border-zinc-200 rounded-l text-zinc-400;
 }
 
 .next {
-  @apply p-2 border border-zinc-400;
+  @apply font-lexend p-2 border-r border-b border-t border-zinc-200 rounded-r text-zinc-400;
 }

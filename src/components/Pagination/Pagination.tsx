@@ -47,12 +47,11 @@ export function PaginatedItems({ itemsPerPage }) {
       <Items currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
-        nextLabel="próximo >"
+        nextLabel=">"
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={pageCount}
-        previousLabel="< voltar"
-        renderOnZeroPageCount={null}
+        previousLabel="<"
         className="pagination-container"
         activeClassName="active"
         pageClassName="page"
