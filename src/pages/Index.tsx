@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import { Loading } from "../components/Loading/Loading";
+import { Pagination } from "../components/Pagination/Pagination";
 import { Post } from "../components/Post/Post";
 
 interface Post {
@@ -15,7 +16,7 @@ interface Post {
 export const IndexPage = () => {
   const GET_POSTS_QUERY = gql`
     query GetPostsQuery {
-      codelandia01S(orderBy: published_DESC) {
+      codelandia01S(orderBy: published_DESC, first: 2) {
         id
         slug
         title
@@ -45,13 +46,18 @@ export const IndexPage = () => {
 
   return (
     <div className="w-full px-5 md:w-2/3 md:px-0 pt-24">
-      {data.codelandia01S.map((post) => {
-        return (
-          <Post key={post.id} date={post.published} slug={post.slug} title={post.title}>
-            {post.content.text}
-          </Post>
-        );
-      })}
+      <div>
+        {data.codelandia01S.map((post) => {
+          return (
+            <Post key={post.id} date={post.published} slug={post.slug} title={post.title}>
+              {post.content.text}
+            </Post>
+          );
+        })}
+      </div>
+      <div className="flex flex-1 w-full min-h-[80px] max-h-[80px]">
+        <Pagination itemsLength={data.codelandia01S.length} />
+      </div>
     </div>
   );
 };

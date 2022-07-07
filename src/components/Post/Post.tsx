@@ -4,7 +4,7 @@ import pt_BR from "date-fns/locale/pt-BR";
 import { Link } from "react-router-dom";
 import { PostLike } from "../PostLike/PostLike";
 
-interface IPostProps {
+export interface IPostProps {
   title: string;
   slug: string;
   children: string;

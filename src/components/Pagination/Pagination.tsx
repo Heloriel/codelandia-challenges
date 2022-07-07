@@ -1,63 +1,40 @@
-import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
 import "./Pagination.css";
 
-// Example items, to simulate fetching from another resources.
-const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-
-function Items({ currentItems }) {
-  return (
-    <>
-      {currentItems &&
-        currentItems.map((item) => (
-          <div>
-            <h3>Item #{item}</h3>
-          </div>
-        ))}
-    </>
-  );
+interface IPageClicked {
+  selected: number;
 }
 
-export function PaginatedItems({ itemsPerPage }) {
-  // We start with an empty list of items.
-  const [currentItems, setCurrentItems] = useState(null);
-  const [pageCount, setPageCount] = useState(0);
-  // Here we use item offsets; we could also use page offsets
-  // following the API or data you're working with.
-  const [itemOffset, setItemOffset] = useState(0);
+interface IPaginationProps {
+  itemsLength: number;
+}
 
-  useEffect(() => {
-    // Fetch items from another resources.
-    const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-    setCurrentItems(items.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(items.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage]);
+function handleClick(data: IPageClicked) {
+  console.log(data.selected);
+}
 
-  // Invoke when user click to request another page.
-  const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % items.length;
-    console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
-    setItemOffset(newOffset);
-  };
+export const Pagination = (props: IPaginationProps) => {
+  const totalPages = Math.ceil(props.itemsLength / 2);
 
   return (
     <>
-      <Items currentItems={currentItems} />
       <ReactPaginate
+        pageCount={totalPages}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={2}
+        onPageChange={handleClick}
+        previousLabel="<"
         breakLabel="..."
         nextLabel=">"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
-        pageCount={pageCount}
-        previousLabel="<"
         className="pagination-container"
-        activeClassName="active"
-        pageClassName="page"
-        previousClassName="previous"
-        nextClassName="next"
+        activeLinkClassName="active-link"
+        pageLinkClassName="page-link"
+        previousLinkClassName="previous-link"
+        nextLinkClassName="next-link"
+        nextClassName="next-list"
+        breakLinkClassName="break-link"
       />
     </>
   );
-}
+};
