@@ -1,8 +1,11 @@
 import { createContext } from "react";
 
-const GlobalContext = createContext({
-  searchStringState: "",
-  update: (data: any) => {}
-});
+export interface IGlobalContext {
+  pageOffset?: number;
+  updateContext: Function;
+}
 
-export default GlobalContext;
+export const GlobalContext = createContext<IGlobalContext>({
+  pageOffset: 0,
+  updateContext: () => {}
+});

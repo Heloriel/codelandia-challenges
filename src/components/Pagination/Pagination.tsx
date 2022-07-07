@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import ReactPaginate from "react-paginate";
+import { IGlobalContext, GlobalContext } from "../../lib/GlobalContextProvider";
 
 import "./Pagination.css";
 
@@ -10,12 +12,15 @@ interface IPaginationProps {
   itemsLength: number;
 }
 
-function handleClick(data: IPageClicked) {
-  console.log(data.selected);
-}
-
 export const Pagination = (props: IPaginationProps) => {
   const totalPages = Math.ceil(props.itemsLength / 2);
+  const global = useContext(GlobalContext);
+
+  function handleClick(data: IPageClicked) {
+    console.log(global.pageOffset);
+    global.updateContext({ pageOffset: data.selected });
+    console.log(global.pageOffset);
+  }
 
   return (
     <>
@@ -23,7 +28,7 @@ export const Pagination = (props: IPaginationProps) => {
         pageCount={totalPages}
         marginPagesDisplayed={2}
         pageRangeDisplayed={2}
-        onPageChange={handleClick}
+        onPageChange={(data) => handleClick(data)}
         previousLabel="<"
         breakLabel="..."
         nextLabel=">"

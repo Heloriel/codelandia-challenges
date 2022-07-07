@@ -1,7 +1,9 @@
 import { gql, useQuery } from "@apollo/client";
+import { useContext, useEffect } from "react";
 import { Loading } from "../components/Loading/Loading";
 import { Pagination } from "../components/Pagination/Pagination";
 import { Post } from "../components/Post/Post";
+import { GlobalContext } from "../lib/GlobalContextProvider";
 
 interface Post {
   id: string;
@@ -14,9 +16,14 @@ interface Post {
 }
 
 export const IndexPage = () => {
+  const global = useContext(GlobalContext);
+
+  const POSTS_PER_PAGE = 4;
+  let offset = global.pageOffset;
+
   const GET_POSTS_QUERY = gql`
-    query GetPostsQuery {
-      codelandia01S(orderBy: published_DESC, first: 2) {
+    query GetPostsQuery($postsPerPage: Int, $offset: Int) {
+      codelandia01S(orderBy: published_DESC, first: $postsPerPage, skip: $offset) {
         id
         slug
         title
@@ -28,7 +35,12 @@ export const IndexPage = () => {
     }
   `;
 
-  const { loading, data } = useQuery<{ codelandia01S: Post[] }>(GET_POSTS_QUERY);
+  const { loading, data } = useQuery<{ codelandia01S: Post[] }>(GET_POSTS_QUERY, {
+    variables: {
+      postsPerPage: 4,
+      offset: 0
+    }
+  });
 
   if (loading) {
     return <Loading />;
