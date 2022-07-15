@@ -1,4 +1,4 @@
-import { MagnifyingGlass } from "phosphor-react";
+import { MagnifyingGlass, Target } from "phosphor-react";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
@@ -17,9 +17,10 @@ export const SearchBar = () => {
           type="text"
           name="search"
           id="mainSearch"
-          className="w-full h-full text-white opacity-100 bg-transparent flex-1 focus:outline-none pl-5"
+          className="w-full h-full text-white opacity-100 bg-transparent flex-1 focus:outline-none pl-5 placeholder:text-gray-400"
           value={searchString ? searchString : ""}
           onChange={(event) => setSearchString(event.target.value)}
+          placeholder={"Buscar postagem..."}
         />
       </div>
       <div className="flex p-6 items-center justify-center">
