@@ -3,18 +3,30 @@
 }
 
 .page-link {
-  @apply border-t border-b border-r border-zinc-200 text-zinc-600 font-lexend py-2 px-4;
+  @apply border-t border-b border-r border-zinc-200 text-zinc-600 font-lexend py-2 px-4 hover:bg-zinc-200;
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
 }
 .active-link {
   @apply border-t border-b border-indigo-500 bg-gradient-to-r from-indigo-500 to-blue-500 text-white;
 }
 
 .previous-link {
-  @apply font-lexend p-2 border border-zinc-200 rounded-l text-zinc-400;
+  @apply font-lexend p-2 border border-zinc-200 rounded-l text-zinc-400 hover:bg-zinc-200;
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
 }
 
 .next-link {
-  @apply font-lexend p-2 border-t border-b border-r border-zinc-200 rounded-r text-zinc-400;
+  @apply font-lexend p-2 border-t border-b border-r border-zinc-200 rounded-r text-zinc-400 hover:bg-zinc-200;
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
 }
 
 .next-list {
@@ -23,4 +35,12 @@
 
 .break-link {
   @apply border-t border-b border-r border-zinc-200 text-zinc-600 font-lexend py-2 px-4;
+}
+
+.disabled-pagination {
+  @apply hover:cursor-not-allowed hover:!bg-transparent;
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
 }

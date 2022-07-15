@@ -2,28 +2,20 @@ import { ApolloProvider } from "@apollo/client";
 import { Client } from "./lib/apollo";
 import { BrowserRouter } from "react-router-dom";
 import { Router } from "./Router";
-import { GlobalContext, IGlobalContext } from "./lib/GlobalContextProvider";
+import { PageContext } from "./contexts/PageContext";
 import { useState } from "react";
 
 function App() {
-  const [state, setState] = useState<IGlobalContext>();
-  const updateContext = (data: any) => {
-    setState(Object.assign({}, data, state));
-  };
-
-  const Context = {
-    state,
-    updateContext
-  };
+  const [page, setPage] = useState(0);
 
   return (
-    <GlobalContext.Provider value={Context}>
-      <ApolloProvider client={Client}>
-        <BrowserRouter>
+    <ApolloProvider client={Client}>
+      <BrowserRouter>
+        <PageContext.Provider value={{ page, setPage }}>
           <Router />
-        </BrowserRouter>
-      </ApolloProvider>
-    </GlobalContext.Provider>
+        </PageContext.Provider>
+      </BrowserRouter>
+    </ApolloProvider>
   );
 }
 

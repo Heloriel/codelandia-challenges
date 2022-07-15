@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import { gql, useQuery } from "@apollo/client";
 import ReactPaginate from "react-paginate";
-import { IGlobalContext, GlobalContext } from "../../lib/GlobalContextProvider";
+import { useContext } from "react";
+import { PageContext } from "../../contexts/PageContext";
 
 import "./Pagination.css";
 
@@ -8,18 +9,31 @@ interface IPageClicked {
   selected: number;
 }
 
-interface IPaginationProps {
-  itemsLength: number;
-}
+export const Pagination = () => {
+  const GET_TOTAL_POSTS = gql`
+    query GetPostsQuery {
+      codelandia01S {
+        id
+      }
+    }
+  `;
 
-export const Pagination = (props: IPaginationProps) => {
-  const totalPages = Math.ceil(props.itemsLength / 2);
-  const global = useContext(GlobalContext);
+  const { page, setPage } = useContext(PageContext);
+
+  const { loading, data } = useQuery<{ codelandia01S: {}[] }>(GET_TOTAL_POSTS);
+
+  // if (loading) {
+  //   return (
+  //     <div>
+  //       <div>Carregando...</div>
+  //     </div>
+  //   );
+  // }
+
+  const totalPages = Math.ceil((data ? data.codelandia01S.length : 0) / 2);
 
   function handleClick(data: IPageClicked) {
-    console.log(global.pageOffset);
-    global.updateContext({ pageOffset: data.selected });
-    console.log(global.pageOffset);
+    setPage(data.selected);
   }
 
   return (
@@ -35,10 +49,13 @@ export const Pagination = (props: IPaginationProps) => {
         className="pagination-container"
         activeLinkClassName="active-link"
         pageLinkClassName="page-link"
-        previousLinkClassName="previous-link"
+        previousLinkClassName={"previous-link"}
         nextLinkClassName="next-link"
-        nextClassName="next-list"
+        nextClassName={"next-list"}
         breakLinkClassName="break-link"
+        forcePage={page}
+        disabledClassName="disabled-pagination"
+        disabledLinkClassName="disabled-pagination"
       />
     </>
   );
