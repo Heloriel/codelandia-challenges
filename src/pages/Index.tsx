@@ -17,7 +17,7 @@ interface Post {
 
 export const IndexPage = () => {
   const { page } = useContext(PageContext);
-  const POSTS_PER_PAGE = 2;
+  const POSTS_PER_PAGE = 4;
   let offset = page * POSTS_PER_PAGE;
 
   const GET_POSTS_QUERY = gql`
