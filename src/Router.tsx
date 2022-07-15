@@ -4,7 +4,6 @@ import { IndexPage } from "./pages/Index";
 import { PostPage } from "./pages/PostPage";
 import { NotFound } from "./pages/NotFound";
 import { SearchPage } from "./pages/SearchPage";
-import { Pagination } from "./components/Pagination/Pagination";
 
 export function Router() {
   return (
@@ -26,15 +25,6 @@ export function Router() {
         }
       />
       <Route path="/post/:slug" element={<PostPage />} />
-
-      <Route
-        path="/debug"
-        element={
-          <div className="flex w-full h-screen items-center justify-center">
-            <Pagination />
-          </div>
-        }
-      />
 
       <Route path="*" element={<NotFound />} />
     </Routes>
