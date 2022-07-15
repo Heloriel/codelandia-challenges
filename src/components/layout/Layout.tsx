@@ -2,7 +2,7 @@ import { Footer } from "./Footer/Footer";
 import { Header } from "./Header/Header";
 
 interface ILayoutProps {
-  children: React.ReactNode;
+  children: JSX.Element;
 }
 
 export const Layout = (props: ILayoutProps) => {
