@@ -9,7 +9,11 @@ interface IPageClicked {
   selected: number;
 }
 
-export const Pagination = () => {
+interface IPaginationProps {
+  postsPerPage: number;
+}
+
+export const Pagination = ({ postsPerPage }: IPaginationProps) => {
   const GET_TOTAL_POSTS = gql`
     query GetPostsQuery {
       codelandia01S {
@@ -20,17 +24,9 @@ export const Pagination = () => {
 
   const { page, setPage } = useContext(PageContext);
 
-  const { loading, data } = useQuery<{ codelandia01S: {}[] }>(GET_TOTAL_POSTS);
+  const { data } = useQuery<{ codelandia01S: {}[] }>(GET_TOTAL_POSTS);
 
-  // if (loading) {
-  //   return (
-  //     <div>
-  //       <div>Carregando...</div>
-  //     </div>
-  //   );
-  // }
-
-  const totalPages = Math.ceil((data ? data.codelandia01S.length : 0) / 2);
+  const totalPages = Math.ceil((data ? data.codelandia01S.length : 0) / postsPerPage);
 
   function handleClick(data: IPageClicked) {
     setPage(data.selected);

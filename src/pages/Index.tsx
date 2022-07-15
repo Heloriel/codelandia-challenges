@@ -67,7 +67,7 @@ export const IndexPage = () => {
         })}
       </div>
       <div className="flex flex-1 w-full min-h-[80px] max-h-[80px]">
-        <Pagination />
+        <Pagination postsPerPage={POSTS_PER_PAGE} />
       </div>
     </div>
   );
