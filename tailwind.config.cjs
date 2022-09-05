@@ -3,14 +3,10 @@ module.exports = {
   content: ['./src/**/*.tsx'],
   theme: {
     fontFamily: {
-      "merriweather": ['Merriweather', 'serif'],
-      "lato": ['Lato', 'sans-serif'],
+      'merriweather': ['Merriweather', 'serif'],
+      'lato': ['Lato', 'sans-serif'],
     },
-    extend: {
-      colors: {
-        "main-purple": "#D7D4FF",
-      }
-    },
+    extend: {},
   },
   plugins: [],
 }
