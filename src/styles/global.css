@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-zinc-100;
+.home-item-list li {
+  @apply w-full aspect-square flex items-center justify-center;
 }
