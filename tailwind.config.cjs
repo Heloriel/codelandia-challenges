@@ -2,11 +2,16 @@
 module.exports = {
   content: ['./src/**/*.tsx'],
   theme: {
-    fontFamily: {
-      'merriweather': ['Merriweather', 'serif'],
-      'lato': ['Lato', 'sans-serif'],
+    fontFamily:
+    {
+      'poppins': 'Poppins, sans-serif',
     },
-    extend: {},
+    extend: {
+      colors:{
+        'challenge-green': '#628E75',
+        'challenge-blue': '#1A4855',
+      }
+    },
   },
   plugins: [],
 }
