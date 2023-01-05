@@ -14,7 +14,7 @@ const Button = ({text, url, outline = false, icon}: IButtonProps) => {
       href={url}
       className={
         clsx(
-          `flex w-full items-center justify-center -skew-x-[27deg] border-2 border-challenge-green px-10 py-2`,
+          `flex w-full items-center justify-center -skew-x-[27deg] border-2 border-challenge-green px-4 py-2`,
           { 'bg-challenge-green hover:brightness-[0.95]': !outline,
             'hover:bg-challenge-green': outline,
           })}>
