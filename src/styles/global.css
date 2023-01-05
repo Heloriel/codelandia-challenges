@@ -21,12 +21,12 @@
 }
 
 body{
-  @apply flex w-full min-h-screen items-center justify-center bg-gradient-to-br from-challenge-green to-challenge-blue;
+  @apply flex w-full min-h-screen items-center justify-center bg-gradient-to-br from-challenge-green to-challenge-blue md:px-36;
 }
 
-.main{
- @apply flex flex-col w-full min-h-screen items-center justify-center px-36;
- max-width: 1450px;
+main{
+  @apply flex flex-col justify-center;
+ max-width: 1110px;
 }
 
 .image-element{

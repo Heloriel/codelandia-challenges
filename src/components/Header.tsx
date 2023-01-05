@@ -2,7 +2,7 @@ import {FiFacebook, FiInstagram, FiTwitter, FiYoutube} from 'react-icons/fi';
 
 const Header = () => {
   return (
-    <header className="flex w-full items-center justify-between mb-20">
+    <header className="flex w-full items-center justify-between">
       <div className='flex-1'>
         <img src="/assets/logo.svg" width={100} height={48.11} />
       </div>
