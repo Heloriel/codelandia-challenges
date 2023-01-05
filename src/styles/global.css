@@ -21,9 +21,42 @@
 }
 
 body{
-  @apply bg-gradient-to-br from-challenge-green to-challenge-blue;
+  @apply flex w-full min-h-screen items-center justify-center bg-gradient-to-br from-challenge-green to-challenge-blue;
 }
 
 .main{
  @apply flex flex-col w-full min-h-screen items-center justify-center px-36;
+ max-width: 1450px;
+}
+
+.image-element{
+  animation-name: cssAnimation_0, cssAnimation_1, cssAnimation_2, cssAnimation_3;
+  animation-duration: 2500ms, 2500ms, 2500ms, 2500ms;
+  animation-timing-function: linear, linear, linear, linear;
+  animation-delay: 0ms, 0ms, 0ms, 0ms;
+  animation-iteration-count: infinite, infinite, infinite, infinite;
+}
+
+@keyframes cssAnimation_0 {
+  to {
+    transform: translate(0px, -50px);
+  }
+}
+
+@keyframes cssAnimation_1 {
+  to {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes cssAnimation_2 {
+  to {
+    transform: translate(0px, 50px);
+  }
+}
+
+@keyframes cssAnimation_3 {
+  to {
+    transform: translate(0px, 0px);
+  }
 }
