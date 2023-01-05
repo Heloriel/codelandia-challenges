@@ -32,26 +32,26 @@ body{
 .image-element{
   animation-name: cssAnimation_0, cssAnimation_1, cssAnimation_2, cssAnimation_3;
   animation-duration: 2500ms, 2500ms, 2500ms, 2500ms;
-  animation-timing-function: linear, linear, linear, linear;
+  animation-timing-function: linear, linear, ease-in, linear;
   animation-delay: 0ms, 0ms, 0ms, 0ms;
   animation-iteration-count: infinite, infinite, infinite, infinite;
 }
 
 @keyframes cssAnimation_0 {
   to {
-    transform: translate(0px, -50px);
+    transform: translate(0px, 50px);
   }
 }
 
-@keyframes cssAnimation_1 {
+/* @keyframes cssAnimation_1 {
   to {
     transform: translate(0px, 0px);
   }
-}
+} */
 
 @keyframes cssAnimation_2 {
   to {
-    transform: translate(0px, 50px);
+    transform: translate(0px, -50px);
   }
 }
 
