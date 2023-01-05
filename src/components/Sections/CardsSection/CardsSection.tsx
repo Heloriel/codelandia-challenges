@@ -3,7 +3,7 @@ import Card from "../../Card/Card";
 export default function CardsSection() {
   return (
     <section className="flex w-full justify-center items-center md:py-40 px-4 pt-4 pb-16">
-      <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 md:gap-y-16 md:gap-x-28 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 lg:gap-y-16 md:gap-x-28 gap-4">
         <Card color="#FF6363" title="Título do Card">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in neque et nisl.
         </Card>

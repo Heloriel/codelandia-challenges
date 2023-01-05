@@ -12,7 +12,7 @@ interface IPropsCard {
 
 export default function Card({ color, children, title }: IPropsCard) {
   return (
-    <div className="flex flex-col md:max-w-[340px] min-w-[340px] shadow-lg rounded overflow-hidden">
+    <div className="flex flex-col max-w-[340px] min-w-[280px] shadow-lg rounded overflow-hidden aspect-auto">
       <div className="h-[222px]" style={{ backgroundColor: color }}></div>
       <div className="flex flex-col w-full min-h-[200px] p-8">
         <span className="font-merriweather font-bold text-2xl mb-6 text-zinc-900">{title}</span>
