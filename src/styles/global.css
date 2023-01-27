@@ -31,9 +31,5 @@ main{
 }
 
 .wrapper{
-  @apply flex flex-col justify-between items-center max-w-[980px] min-h-[600px];
-}
-
-.lower{
-  @apply flex w-full;
+  @apply flex flex-col justify-between items-center max-w-[980px] min-h-[600px] w-full;
 }
