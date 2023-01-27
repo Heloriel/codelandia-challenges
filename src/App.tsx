@@ -1,3 +1,5 @@
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+
 function App() {
   return (
     <main>
@@ -12,8 +14,14 @@ function App() {
             <div className="flex flex-col w-2/3">
                 <div>Em “Loki” da Marvel Studios, o vilão mercurial Loki (Tom Hiddleston) retoma seu papel como o Deus do Mal em uma nova série que ocorre após os eventos de “Vingadores: Endgame”. </div>
                 <div className="flex w-full justify-between">
-                  <span className="text-2xl font-bold">51</span>
-                  <span>5 estrela</span>
+                  <span className="text-2xl font-bold">51min</span>
+                  <div className="flex">
+                    <AiFillStar size={32} fill='#FFA800' />
+                    <AiFillStar size={32} fill='#FFA800' />
+                    <AiFillStar size={32} fill='#FFA800' />
+                    <AiFillStar size={32} fill='#FFA800' />
+                    <AiOutlineStar size={32} />
+                  </div>
                   <span className="text-2xl font-bold">2021</span>
                 </div>
                 <div>
