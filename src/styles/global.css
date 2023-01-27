@@ -17,49 +17,23 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
-  @apply font-poppins;
-}
-
-body{
-  @apply bg-gradient-to-br from-challenge-green to-challenge-blue min-h-screen;
+  @apply font-b612;
 }
 
 main{
-  @apply flex flex-col w-full min-h-screen md:justify-center md:items-center pb-8 md:pb-0;
+  @apply flex w-full min-h-screen;
+  background: url('/assets/image.jpg') center no-repeat;
+  background-size: cover;
+}
+
+.bg-filter{
+  @apply flex flex-col w-full justify-center items-center min-h-screen bg-black bg-opacity-70;
 }
 
 .wrapper{
-  @apply max-w-[1110px]
+  @apply flex flex-col justify-center items-center max-w-[980px];
 }
 
-.image-element{
-  animation-name: cssAnimation_0, cssAnimation_1, cssAnimation_2, cssAnimation_3;
-  animation-duration: 2500ms, 2500ms, 2500ms, 2500ms;
-  animation-timing-function: linear, linear, ease-in, linear;
-  animation-delay: 0ms, 0ms, 0ms, 0ms;
-  animation-iteration-count: infinite, infinite, infinite, infinite;
-}
-
-@keyframes cssAnimation_0 {
-  to {
-    transform: translate(0px, 50px);
-  }
-}
-
-/* @keyframes cssAnimation_1 {
-  to {
-    transform: translate(0px, 0px);
-  }
-} */
-
-@keyframes cssAnimation_2 {
-  to {
-    transform: translate(0px, -50px);
-  }
-}
-
-@keyframes cssAnimation_3 {
-  to {
-    transform: translate(0px, 0px);
-  }
+.lower{
+  @apply flex w-full;
 }
