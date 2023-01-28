@@ -36,12 +36,14 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="md:hidden w-full h-2/5 bg-zinc-900 rounded-t-3xl px-8">
-          <div className="flex w-full gap-x-4 border-b border-neutral-700 py-8">
-                <Button className="flex-1 px-0 py-2 text-sm">Assistir Agora</Button>
-                <Button className="flex-1 px-0 py-2 text-sm" alternate>Trailer</Button>
+        <div className="w-full h-52">
+          <div className="md:hidden w-full bg-zinc-900 rounded-t-3xl px-8 absolute bottom-0">
+            <div className="flex w-full gap-x-4 border-b border-neutral-700 py-8">
+                  <Button className="flex-1 px-0 py-2 text-sm">Assistir Agora</Button>
+                  <Button className="flex-1 px-0 py-2 text-sm" alternate>Trailer</Button>
+            </div>
+            <div className="my-8">Em “Loki” da Marvel Studios, o vilão mercurial Loki (Tom Hiddleston) retoma seu papel como o Deus do Mal em uma nova série que ocorre após os eventos de “Vingadores: Endgame”. </div>
           </div>
-          <div className="my-8">Em “Loki” da Marvel Studios, o vilão mercurial Loki (Tom Hiddleston) retoma seu papel como o Deus do Mal em uma nova série que ocorre após os eventos de “Vingadores: Endgame”. </div>
         </div>
       </div>
     </main>
