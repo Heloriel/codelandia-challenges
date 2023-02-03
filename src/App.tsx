@@ -5,7 +5,7 @@ function App() {
   return (
     <main>
       <div className="bg-filter">
-        <div className="wrapper pt-16">
+        <div className="wrapper pt-16 pb-16">
           <div>
             <h3 className="font-bold mb-9">ESTÁ DISPONÍVEL AGORA!</h3>
             <h1 className="text-8xl font-bold">LOKI</h1>
@@ -36,7 +36,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="w-full h-52">
+        <div className="w-full">
           <div className="md:hidden w-full bg-zinc-900 rounded-t-3xl px-8 absolute bottom-0">
             <div className="flex w-full gap-x-4 border-b border-neutral-700 py-8">
                   <Button className="flex-1 px-0 py-2 text-sm">Assistir Agora</Button>
